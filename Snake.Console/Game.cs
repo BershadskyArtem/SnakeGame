@@ -104,7 +104,7 @@ public class Game
     /// </summary>
     /// <param name="keyInfo"></param>
     /// <param name="previousKeyInfo"></param>
-    private void HandleKeyPressed(ref ConsoleKeyInfo keyInfo, ref ConsoleKeyInfo previousKeyInfo)
+    private void HandleKeyPressed(ConsoleKeyInfo keyInfo, ConsoleKeyInfo previousKeyInfo)
     {
         switch (keyInfo.Key)
         {
@@ -174,7 +174,7 @@ public class Game
         _inputHandler.PollEvents();
 
         //We need to move whether or not gamer pressed the button.
-        HandleKeyPressed(ref _keyInfo, ref _previousKeyInfo);
+        HandleKeyPressed(_keyInfo, _previousKeyInfo);
 
         //If head touches the body
         if (_snake[0] == _fruit)
